@@ -1,7 +1,13 @@
+import React from "react";
+import Formulario from "./components/Formulario";
+
 function App() {
   return (
-    <div>
-      <h2>Sky is the limit</h2>
+    <div className="container">
+      <div className="jumbotron">
+        <p className="lead text-center">Find your image. Type a word.</p>
+        <Formulario />
+      </div>
     </div>
   );
 }

@@ -42,6 +42,8 @@ function App() {
       </div>
       <div className="row justify-content-center">
         <ListadoImagenes imagenes={imagenes} />
+        <button type="button" className="btn btn-info mr-1">Back</button>
+        <button type="button" className="btn btn-info mr-1">Next</button>
       </div>
     </div>
   );

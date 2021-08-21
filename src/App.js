@@ -4,8 +4,10 @@ import ListadoImagenes from "./components/ListadoImagenes";
 
 function App() {
   // State de la app
-  const [busqueda, guardarBusqueda] = useState('');
+  const [busqueda, guardarBusqueda] = useState("");
   const [imagenes, guardarImagenes] = useState([]);
+  const [paginaactual, guardarPaginaActual] = useState(1);
+  const [totalpaginas, guardarTotalPaginas] = useState(1);
 
   useEffect(() => {
     const consultarApi = async () => {
@@ -20,6 +22,12 @@ function App() {
       const resultado = await respuesta.json();
 
       guardarImagenes(resultado.hits);
+
+      // calcular el total de paginas
+      const calcularTotalPaginas = Math.ceil(
+        resultado.totalHits / imagenesPorPagina
+      );
+      guardarTotalPaginas(calcularTotalPaginas)
     };
     consultarApi();
   }, [busqueda]);
@@ -27,7 +35,9 @@ function App() {
   return (
     <div className="container">
       <div className="jumbotron">
-        <p className="h2 text-center mb-4">PIXABAY - Amazing Free Images To Download</p>
+        <p className="h2 text-center mb-4">
+          PIXABAY - Amazing Free Images To Download
+        </p>
         <Formulario guardarBusqueda={guardarBusqueda} />
       </div>
       <div className="row justify-content-center">

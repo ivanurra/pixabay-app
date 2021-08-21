@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="container">
       <div className="jumbotron">
-        <p className="lead text-center">Find your image. Type a word.</p>
+        <p className="h2 text-center mb-4">PIXABAY - Amazing Free Images To Download</p>
         <Formulario guardarBusqueda={guardarBusqueda} />
       </div>
       <div className="row justify-content-center">

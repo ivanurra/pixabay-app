@@ -25,7 +25,7 @@ const Formulario = ({ guardarBusqueda }) => {
           <input
             type="text"
             className="form-control form-control-lg"
-            placeholder="Find a image"
+            placeholder="Type: landscapes, beach, family, landscape, sky, nature, technology, woman, ..."
             onChange={(e) => guardarTermino(e.target.value)}
           />
         </div>
